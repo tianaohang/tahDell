@@ -1,0 +1,56 @@
+@import "index.less";
+body{
+  font-family: 'microsoft yahei';
+}
+#main{
+  >.container{
+    >.row{
+      padding: 40px 0;
+      >.col-md-7{
+        h4{
+          margin:0 10px 10px 0;
+          color:#007DC7;
+        }
+        p{
+          margin-bottom: 5px;
+        }
+      }
+      >.col-md-3{
+        input{
+          width:100%;
+          margin:1.0em 0;
+        }
+      }
+    }
+  }
+}
+.infoText{
+  background: #DDDDDD;
+  margin:5px 0;
+  img{
+    margin-top:-5px;
+  }
+}
+.infoImg{
+  img{
+    width:100%;
+  }
+  padding-bottom:30px;
+}
+@media screen and (min-width: 992px){
+  #main>.container>.row{
+    border-bottom:1px solid #CCCCCC;
+  }
+}
+#alertInfo{
+  margin-top:1.5em;
+  display:none;
+}
+.inOut{
+  display:none;
+}
+.row:nth-child(1) .inOut{
+  display:block;
+}.row:nth-child(2) .inOut{
+  display:block;
+}

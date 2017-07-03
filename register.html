@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/returnIndex.css"/>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <style>
+        input{
+            border:0;
+            padding:0;
+            margin:0;
+        }
+        #d1{
+            width: 600px;
+            height:600px;
+            margin:100px auto;
+            position:relative;
+        }
+        #d1 h1{
+            -ms-text-align-last: center;
+            text-align-last: center;
+        }
+        .main{
+            border:2px solid #555555;
+            border-radius: 5px;
+            box-shadow: 2px 0 0 #666666;
+            padding:10px 0;
+            background:rgba(255,255,255, 0.6)
+        }
+        .main p{
+            height:28px;
+            line-height:28px;
+            margin:30px 0;
+        }
+        .main p span{
+            float:left;
+            width:100px;
+            text-align:right;
+            color:#000000;
+            font-weight: bold;
+        }
+        .main p input{
+            outline:none;
+            border:1px solid #666666;
+            width:200px;
+            border-radius: 3px;
+            padding-left:6px;
+            height:24px;
+            margin-left: 8px;
+            /*box-shadow:0 0 3px #0777FF;*/
+        }
+        .main p a{
+            height:28px;
+            padding:8px 10px;
+            display:none;
+            background:#7A7A7A;
+            border-radius: 4px;
+            color:#fff;
+            font-weight:bold;
+        }
+        .main>p:last-child input{
+            border: 0;
+            margin-left:108px;
+            height:35px;
+            width:210px;
+            background:#5EBD5E;
+            color:#fff;
+            font-weight: bold;
+            font-size: 14px;
+            padding:5px 0;
+        }
+        .bg-img{
+            position: fixed;
+            top:70px;
+        }
+        #model{
+            position:fixed;
+            width:100%;
+            height:100%;
+            top:0;
+            background: rgba(255,255,255, 0.8);
+            display: none;
+        }
+        .contain{
+            position: absolute;
+            width:300px;
+            height:150px;
+            background:#999;
+            border-radius: 5px;
+        }
+        .contain p{
+            padding:15px;
+            font-size: 16px;
+        }
+        .contain button{
+            margin-top:15px;
+        }
+        .contain a{
+            margin-left:92px;
+            color:#fff;
+        }
+    </style>
+</head>
+<body>
+<header id="header"></header>
+<div class="bg-img">
+    <img src="images/register/2.jpg" alt=""/>
+</div>
+<div id="d1">
+    <h1>用户注册页面</h1>
+    <form id="res-form">
+        <div class="main">
+            <p>
+                <span>用户名：</span>
+                <input type="text" name="uname" placeholder="请输入8至16位的英文或数字" onblur="valiName(this)"/>
+                <a>请输入8至16位的英文或数字</a>
+            </p>
+            <p>
+                <span>密码：</span>
+                <input type="password" name="upwd" placeholder="请输入6至12位的数字" onblur="valiPwd(this)"/>
+                <a>请输入6至12位的数字</a>
+            </p>
+            <p>
+                <span>电子邮件：</span>
+                <input type="text" name="uemail" placeholder="请输入电子邮件" id="email" onblur="valiEmail(this)"/>
+                <a>请输入电子邮件</a>
+            </p>
+            <p>
+                <span>个人主页：</span>
+                <input type="text" name="bgo" placeholder="请输入个人主页网址" id="bgo" onblur="valiBgo(this)"/>
+                <a>请输入个人主页网址</a>
+            </p>
+            <p>
+                <span>年龄：</span>
+                <input type="text" name="age" placeholder="请输入年龄" id="number" onblur="valiAge(this)"/>
+                <a>请输入年龄</a>
+            </p>
+            <p>
+                <span>出生日期：</span>
+                <input type="text" name="birth"  placeholder="请输入生日日期" id="date" onblur="valiBirth(this)"/>
+                <a>请输入生日日期</a>
+            </p>
+            <p><input type="button" value="提交" id="bt-submit"/></p>
+        </div>
+    </form>
+</div>
+<div id="model">
+    <div class="contain">
+
+    </div>
+</div>
+<footer id="footer"></footer>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $('.contain').css('top',innerHeight/2-parseFloat($('.contain').css('height'))/2)
+    $('.contain').css('left',innerWidth/2-parseFloat($('.contain').css('width'))/2)
+    $('.contain').on('click','#mo-btn',function(){$('#model').fadeOut();location.reload();})
+    $('.contain').on('click','a',function(e){e.preventDefault();location='Dell.html'})
+    //DE5750  5EBD5E
+    $('.main').on('focus','input',function(e){
+        $(e.target).css('boxShadow','0 0 3px #0777FF');
+        $(e.target).siblings('a').show();
+    });
+    function valiName(txt){
+        if(txt.value==''){
+            $(txt).next().html('用户名不能为空').css('background','#DE5750');
+            return false;
+        }
+        else if(/^[\d\w]{8,16}$/.test(txt.value)){
+            $(txt).next().html('用户名输入正确').css('background','#5EBD5E');
+            return true;
+        }else{
+            $(txt).next().html('请输入8至16位的英文或数字').css('background','#DE5750');
+            return false;
+        }
+    }
+    function valiPwd(txt){
+        if(txt.value==''){
+            $(txt).next().html('密码不能为空').css('background','#DE5750');
+            return false;
+        }
+        else if(/^[\d]{6,12}$/.test(txt.value)){
+            $(txt).next().html('密码输入正确').css('background','#5EBD5E');
+            return true;
+        }else{
+            $(txt).next().html('请输入6至12位的数字').css('background','#DE5750');
+            return false;
+        }
+    }
+    function valiEmail(txt){
+        if(txt.value==''){
+            $(txt).next().html('邮箱不能为空').css('background','#DE5750');
+            return false;
+        }
+        else if(/^.{1,}@.{1,}$/.test(txt.value)){
+            $(txt).next().html('邮箱输入正确').css('background','#5EBD5E');
+            return true;
+        }else{
+            $(txt).next().html('请输入正确的邮箱格式').css('background','#DE5750');
+            return false;
+        }
+    }
+    function valiBgo(txt){
+        $(txt).next().hide();
+    }
+    function valiAge(txt){
+        $(txt).next().hide();
+    }
+    function valiBirth(txt){
+        $(txt).next().hide();
+    }
+    console.log(document.forms[0]);
+    $('#bt-submit').click(function(e){
+        var form=document.forms[1];
+        var txtName=form.uname;
+        var rName=valiName(txtName);
+        var rPwd=valiPwd(form.upwd);
+        var rEmail=valiEmail(form.uemail);
+        //如果rName和rPwd不都为true
+        if(rName&&rPwd&&rEmail){
+            e.preventDefault();//取消事件 阻止默认行为
+            var data=$('#res-form').serialize();
+            console.log(data);
+            $('#bt-submit').click(function(){
+                console.log(data);
+                $.ajax({
+                    url:'data/register.php',
+                    data:data,
+                    success:function(txt){
+                        if(txt=='succ'){
+                            $('#model').fadeIn();
+                            $('#model>.contain').html(
+                                    `<p>注册成功！</p><a href="#">点击返回首页登陆</a>
+        <button id="mo-btn" class="btn btn-danger center-block">返回再次注册</button>`
+                            )
+                        }
+                    }
+                })
+
+            })
+        }
+        else{
+            e.preventDefault();
+            $('#model').fadeIn();
+            $('#model>.contain').html(
+                    `<p>注册失败，请仔细检查输入信息后重试！</p>
+        <button id="mo-btn" class="btn btn-danger center-block">返回重试</button>`
+            )
+        }
+    });
+</script>
+<script>
+    $('header').load('data/header.php')
+    $('footer').load('data/footer.php')
+    $('.bg-img>img').css('width',screen.availWidth);
+
+</script>
+</body>
+</html>

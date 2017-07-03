@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/product.css"/>
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+<header id="header">
+</header>
+<div id="main">
+    <div class="container" id='listDetail'>
+        <div class="row">
+            <div class="col-sm-3 col-md-2 clearfix">
+                <div class="infoText inOut">
+                    <img src="images/redtriangle.png" alt=""/>
+                    <span>畅销产品</span>
+                </div>
+                <div class="infoImg">
+                    <a href="#">
+                        <img src="images/inspiron_01.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h4>Inspiron 15 5000系列出彩版（星光银）</h4>
+                <p>这款笔记本电脑最高可配第六代英特尔®酷睿™处理器   ，搭配清晰锐利的15.6"显示屏和内置DVD光驱，可帮助您更高效地完成每项任务。立即购买！</p>
+                <ul>
+                    <li>第六代智能英特尔® 酷睿™i5-6200U 处理器 (3MB 缓存, 最高至 2.80 GHz)</li>
+                    <li>Windows 10 家庭版 64位 简体中文</li>
+                    <li>4GB 单通道DDR3L 1600MHz (4GBx1)</li>
+                    <li>15.6英寸 HD (1366 x 768) Truelife LED背光显示器</li>
+                    <li>500GB 5400RPM SATA 硬盘</li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <input type="button" class="btn btn-primary" value="查看详情"/>
+                <input type="button" class="btn btn-warning" value="加入购入车"/>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="alertInfo" class="alert alert-danger alert-dismissible">
+            <sapn class="close" data-dismiss="alert">&times;</sapn>
+            <p>没有更多数据了！</p>
+        </div>
+    </div>
+    <div class="container">
+        <button class="btn btn-success btn-block" type="button" style="margin:15px 0;" id="btn_ad">加载更多</button>
+    </div>
+</div>
+<footer id="footer">
+</footer>
+<div id="legal"></div>
+<style>
+    #article{
+        position: fixed;
+        right:-228px;
+        bottom:30px;
+        height:306px;
+    }
+    .contact-us-tab{
+        float:left;
+        height:306px;
+        /*position:relative;*/
+        /*width: 38px;*/
+    }
+    .contact-us-tab span{
+        display:inline-block;
+        transform-origin: 100% 100%;
+        transform: rotate(-90deg);
+        padding:6px 15px;
+        color:#fff;
+        font-size: 18px;
+        font-family: Trebuchet MS;
+        cursor:pointer;
+        /*font-weight: bold;*/
+    }
+    .contact-us-content{
+        margin-top: 36px;
+        float:left;
+        width:230px;
+        height:306px;
+        padding:20px;
+        background: #fff;
+        border: 1px solid #DDDDDD;
+        border-left:2px solid #007DB8 ;
+    }
+    .contact-us-content p{
+        font-size:14px;
+        font-family: Trebuchet MS;
+        color: #444;
+    }
+    .contact-us-content li{
+        float:left;
+        margin:10px;
+        position: relative;
+    }
+    .contact-us-content li a{
+        text-decoration:none;
+        display: inline-block;
+        margin-left:18px;
+    }
+    .contact-us-content li span{
+        position: absolute;
+        top:3px;
+        left:0;
+    }
+    #xs-article{
+        position: fixed;
+        bottom:15px;
+        left:30px;
+    }
+    #xs-article .xs-con-tab{
+        padding:8px 12px;
+        background: #007DB8;
+        border: 1px solid #fff;
+        box-shadow: 0 0 15px #666666;
+        cursor: pointer;
+    }
+    #xs-article>.xs-con-tab>span{
+        color:#fff;
+    }
+    #xs-article>.contact-us-content{
+        position: absolute;
+        left:0;
+        bottom:-321px;
+        border: 1px solid #DDDDDD;
+        border-top:2px solid #007DB8 ;
+    }
+    #co-us-close{
+        position:relative;
+        top:-19px;
+        right:-8px;
+    }
+</style>
+<div id="article" class="hidden-xs">
+    <div class="contact-us-tab">
+        <span class="bg-primary" id="bt-tab">联系我们</span>
+    </div>
+    <div class="contact-us-content">
+        <p>需要帮助吗？只需单击鼠标或拨打电话，即可开始与销售专员交流。</p>
+        <ul class="list-unstyled">
+            <li><span class="glyphicon glyphicon-comment text-primary"></span><a href="#">限时特惠在线咨询</a></li>
+            <li><span class="glyphicon glyphicon-phone text-primary"></span><a href="#">限时特惠电话咨询 <br/>800-858-2368座机<br/>400-881-1858手机</a></li>
+            <li><span class="glyphicon glyphicon-time text-primary"></span><a href="#">限时特惠QQ咨询</a></li>
+            <li><span class="glyphicon glyphicon-user text-primary"></span><a href="#">售后服务在线咨询</a></li>
+        </ul>
+    </div>
+</div>
+<div id="xs-article" class="hidden-sm hidden-md hidden-lg">
+    <div class="xs-con-tab">
+        <span class="glyphicon glyphicon-comment" id="xs-bt-tab"></span>
+    </div>
+    <div class="contact-us-content">
+        <span class="close text-primary" id="co-us-close">&times;</span>
+        <p>需要帮助吗？只需单击鼠标或拨打电话，即可开始与销售专员交流。</p>
+        <ul class="list-unstyled">
+            <li><span class="glyphicon glyphicon-comment text-primary"></span><a href="#">限时特惠在线咨询</a></li>
+            <li><span class="glyphicon glyphicon-phone text-primary"></span><a href="#">限时特惠电话咨询 <br/>800-858-2368座机<br/>400-881-1858手机</a></li>
+            <li><span class="glyphicon glyphicon-time text-primary"></span><a href="#">限时特惠QQ咨询</a></li>
+            <li><span class="glyphicon glyphicon-user text-primary"></span><a href="#">售后服务在线咨询</a></li>
+        </ul>
+    </div>
+</div>
+<br/>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/index.js"></script>
+<script src="js/product.js"></script>
+<script>
+    var isOut=true;
+    $('#bt-tab').click(function(){
+        if(isOut){
+            $('#article').animate({
+                right:'0px'
+            },500)
+            isOut=false;
+        }
+
+        else{
+            $('#article').animate({
+                right:'-228px'
+            },500)
+            isOut=true;
+        }
+    })
+    $('.xs-con-tab').click(function(){
+        $(this).fadeOut();
+        $('.contact-us-content').animate({
+                bottom:'0px'
+            },500)
+    })
+    $('#co-us-close').click(function(){
+        $('.xs-con-tab').fadeIn();
+        $('.contact-us-content').animate({
+            bottom:'-321px'
+        },500)
+    })
+</script>
+<script>
+//    (function () {
+//        var s = document.createElement("script");
+//        s.onload = function () {
+//            bootlint.showLintReportForCurrentDocument([]);
+//        };
+//        s.src = "js/bootlint.js";
+//        document.body.appendChild(s)
+//    })();
+    $('[data-toggle="tooltip"]').tooltip();
+</script>
+</body>
+</html>

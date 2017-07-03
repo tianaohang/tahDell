@@ -1,0 +1,270 @@
+@import "bootstrap.less";
+body{
+  margin-top:70px;
+}
+.logo{
+  width:49px;
+  height:49px;
+  display: inline-block;
+  margin-top:-14px;
+}
+#mainSearch,.mlog{
+  display: inline-block;
+  margin-top: 26px;
+}
+#mainSearch span{
+  color:#fff;
+  transform: scale(1.6);
+}
+.mlog{
+  color:#fff;
+}
+.mlog:hover{
+  color:#fff;
+}
+.mlog-lo{
+  display: inline-block;
+  width:20px;
+  height:20px;
+  background:url(../images/sprite-icons.png) -150px -392px;
+  border: 0;
+  outline:none;
+  margin-top:25px;
+}
+.modal-header h3{
+  text-align: center;
+}
+.close{
+  transform: scale(1.6);
+}
+#Umail,#Upwd{
+  margin:10px 0;
+  padding:6px 99px;
+}
+#errinfo{
+  float: right;
+  display:none;
+}
+@err_Base:#D01405;
+.errAct{
+  border:1px solid darken(@err_Base,15%);
+  color:@err_Base;
+  padding:3px 5px;
+  background: lighten(@err_Base,50.5%);
+  border-radius: 4px;
+}
+.simplelink{
+  width:100%;
+  text-align: left;
+  color:#0066CC;
+  font-size: 12px;
+  cursor: pointer;
+}
+.simplelink:hover{
+  text-decoration: underline;
+}
+.simplelink b{
+  float: left;
+  width: 4px;
+  height: 17px;
+  background: url(../images/secondary.gif);
+}
+#simplify-search{
+  height:650px;
+  position: fixed;
+  right:0;
+  background: #252525;
+  z-index: 10000;
+  top:0px;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  #simplify-search{
+    width:45%;
+  }
+}
+@media screen and (max-width: 767px) {
+  #simplify-search{
+    width:100%;
+  }
+}
+.ssch-top{
+  height:70px;
+  background:#444444;
+  >.glyphicon.glyphicon-search {
+    color:#fff;
+    line-height: 70px;
+    padding:0 30px;
+  }
+  >input{
+    height:50px;
+    background:#444444;
+    border: 0;
+    outline: 0;
+    width:200px;
+    color:#fff;
+    font-size:16px;
+  }
+}
+.co{
+  border: 0;
+  outline: none;
+  position:absolute;
+  transform: scale(3);
+  right:25px;
+  top:25px;
+  background:#444444;
+  color:#BBBBBB;
+}
+.row.ride{
+  margin:20px 0;
+}
+.thumbnail{
+  .ttop{
+    margin:5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    color:#0085C3;
+  }
+  .caption{
+    >a{
+      color:#000;
+      font-size: 12px;
+      background: url(../images/secondarybk.gif) no-repeat left 5px;
+      display: block;
+      width:inherit;
+      height:inherit;
+      padding: 5px;
+      >p{
+        margin: 0;
+        font-weight: bold;
+        >b{
+          float: left;
+          width: 4px;
+          height: 17px;
+        }
+      }
+      .hide-box1{
+        height:42px;
+      }
+      .hide-box3{
+        height: 3px;
+      }
+    }
+    hr{
+        margin:5px 0;
+        border-bottom: 1px solid #ccc;
+    }
+  }
+}
+.bloc_k{
+  height:40px;
+}
+#footer{
+  background: #0085C3;
+  border-bottom: 1px solid #fff;
+}
+.row.foot-top{
+  margin: 20px 0;
+  p{
+    color: #fff3f3;
+    font-weight: bold;
+    margin: 0 0 5px;
+  }
+  ul>li>a{
+    color: #FFFFFF;
+    font-size: 12px;
+  }
+  .col-md-5.col-sm-12{
+    margin-bottom:12px;
+  }
+}
+.citychoose{
+  overflow: hidden;
+  a{
+    color: #FFFFFF;
+  }
+  .dd-menu{
+    display: none;
+  }
+}
+#legal{
+  background: #0085C3;
+  .container{
+    padding:40px 15px 0 15px;
+    text-align: center;
+    .cc-content{
+      //width:1000px;
+      margin: 0 auto;
+      ul{
+        display: none;
+      }
+      .pla{
+        li{
+          padding:0 5px;
+        }
+      }
+    }
+    ul{
+      li{
+        padding:0 14px;
+        border-left:1px solid #fff;
+        a{
+          color: #FFFFFF;
+          font-size: 12px;
+        }
+      }
+      li:first-child{
+        border-left:none;
+      }
+      li:nth-child(10){
+        border-left:none;
+      }
+    }
+    p{
+      a{
+        font-size: 12px;
+        color:#fff;
+      }
+    }
+    .conCtrl{
+      a{
+        display: inline-block;
+        font-size: 12px;
+        color:#fff;
+        margin:20px 8px 10px 8px;
+      }
+    }
+  }
+}
+#welcome{
+  position: fixed;
+  top:38px;
+  left:0;
+  z-index:20;
+  border:1px solid #0777FF;
+  text-align: center;
+  background: lighten(#0777FF,15%);
+  color:#fff;
+  //border-radius:5px;
+  transition:transform 0.3s linear;
+  cursor: pointer;
+}
+.welc{
+  animation:wel1 .3s linear forwards;
+}
+@keyframes wel1 {
+  0%{transform:rotatex(0deg) rotatey(0deg);}
+  //50%{transform: translatey(0px);}
+  100%{transform:rotatex(15deg) rotatey(-15deg);}
+}
+.rela{
+  position: relative;
+}
+#Evalue{
+  position:absolute;
+  top:0;
+  right:0;
+  cursor: pointer;
+}
